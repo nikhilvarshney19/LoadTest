@@ -1,4 +1,6 @@
+echo "Enter your message"
+read message
 git pull
 git add .
-git commit -m "test"
+git commit -m "${message}"
 git push
