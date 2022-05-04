@@ -21,7 +21,7 @@
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.duration">6300</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </SetupThreadGroup>
@@ -351,7 +351,7 @@
               <assertionsResultsToSave>0</assertionsResultsToSave>
             </value>
           </objProp>
-          <stringProp name="filename">/usr/bin/Jmeter/LoadTest/Logs/GetUser_${__time(MMMdd,)}.csv</stringProp>
+          <stringProp name="filename">test.csv</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
@@ -364,7 +364,7 @@
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">900</stringProp>
+        <stringProp name="ThreadGroup.duration">6300</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
@@ -383,9 +383,10 @@
             <stringProp name="script">import java.util.function.Function;
 import java.util.stream.Collectors;
 
-FileWriter fr = new FileWriter(&quot;Userservice-Getuser.json&quot;,false);
-fr.write(props.get(&quot;list&quot;).stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))+&quot;&quot;);
-fr.close();</stringProp>
+FileWriter fr = new FileWriter(&quot;UserService-GetUser.json&quot;,false);
+fr.write((props.get(&quot;list&quot;).stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))+&quot;&quot;).replaceAll(&quot;=&quot;,&quot;\&quot;:&quot;).replaceAll(&quot;\\{&quot;,&quot;\\{\&quot;&quot;).replaceAll(&quot;, &quot;,&quot;,\&quot;&quot;));
+fr.close();
+</stringProp>
           </JSR223PreProcessor>
           <hashTree/>
         </hashTree>
