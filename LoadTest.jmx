@@ -163,7 +163,7 @@
               <time>true</time>
               <latency>false</latency>
               <timestamp>true</timestamp>
-              <success>false</success>
+              <success>true</success>
               <label>false</label>
               <code>true</code>
               <message>false</message>
