@@ -184,7 +184,7 @@
               <assertionsResultsToSave>0</assertionsResultsToSave>
             </value>
           </objProp>
-          <stringProp name="filename">encryption.csv</stringProp>
+          <stringProp name="filename">test.csv</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
