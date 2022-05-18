@@ -98,7 +98,7 @@
           </collectionProp>
         </kg.apc.jmeter.timers.VariableThroughputTimer>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Decrypt Text" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get User" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -106,10 +106,7 @@
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
   &quot;data&quot;: [&#xd;
-    {&#xd;
-      &quot;iv&quot;: &quot;1945487a4147d9b0edcfe92e9dacb5e2&quot;,&#xd;
-      &quot;value&quot;: &quot;d36124fec48325184294a739cad86130625411c983c45e891df7&quot;&#xd;
-    }&#xd;
+    {&quot;Hello&quot;:&quot;adsasd asasasa&quot;}&#xd;
   ],&#xd;
   &quot;trackingId&quot;: &quot;${__UUID}&quot;&#xd;
 }</stringProp>
@@ -121,7 +118,7 @@
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/decrypt</stringProp>
+          <stringProp name="HTTPSampler.path">/encrypt</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
