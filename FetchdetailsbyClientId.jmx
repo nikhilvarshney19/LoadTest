@@ -63,12 +63,12 @@
         <hashTree/>
         <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="true">
           <collectionProp name="load_profile">
-            <collectionProp name="-1694406931">
+            <collectionProp name="558113947">
               <stringProp name="49">1</stringProp>
               <stringProp name="51508">400</stringProp>
               <stringProp name="1515111">1800</stringProp>
             </collectionProp>
-            <collectionProp name="1459631996">
+            <collectionProp name="525856060">
               <stringProp name="51508">400</stringProp>
               <stringProp name="51508">400</stringProp>
               <stringProp name="1515111">1800</stringProp>
@@ -76,15 +76,15 @@
           </collectionProp>
         </kg.apc.jmeter.timers.VariableThroughputTimer>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Fetch account number by Client ID" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Fetch account details by Account ID" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments">
-              <elementProp name="externalCustomerId" elementType="HTTPArgument">
+              <elementProp name="clientId" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">${clientId}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">externalCustomerId</stringProp>
+                <stringProp name="Argument.name">clientId</stringProp>
               </elementProp>
               <elementProp name="trackingId" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
@@ -99,7 +99,7 @@
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/account/account-numbers</stringProp>
+          <stringProp name="HTTPSampler.path">/account</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -121,7 +121,7 @@
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1282588835">accountNumbers</stringProp>
+              <stringProp name="-1011205162">accountNumber</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
