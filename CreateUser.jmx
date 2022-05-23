@@ -40,9 +40,9 @@
         <hashTree/>
         <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
-            <elementProp name="Account-service" elementType="Argument">
-              <stringProp name="Argument.name">Account-service</stringProp>
-              <stringProp name="Argument.value">b-accel-account.b-accel.internal</stringProp>
+            <elementProp name="User-service" elementType="Argument">
+              <stringProp name="Argument.name">User-service</stringProp>
+              <stringProp name="Argument.value">b-accel-user.b-accel.internal</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
               <stringProp name="Argument.desc">localhost</stringProp>
             </elementProp>
@@ -52,48 +52,45 @@
               <stringProp name="Argument.metadata">=</stringProp>
               <stringProp name="Argument.desc">5000</stringProp>
             </elementProp>
-            <elementProp name="clientId" elementType="Argument">
-              <stringProp name="Argument.name">clientId</stringProp>
-              <stringProp name="Argument.value">443925770</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
           </collectionProp>
           <stringProp name="TestPlan.comments">/usr/bin/Jmeter/LoadTest/Logs/</stringProp>
         </Arguments>
         <hashTree/>
         <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="true">
           <collectionProp name="load_profile">
-            <collectionProp name="558143738">
+            <collectionProp name="-1661184014">
               <stringProp name="49">1</stringProp>
-              <stringProp name="52469">500</stringProp>
+              <stringProp name="52469">200</stringProp>
               <stringProp name="1515111">1800</stringProp>
             </collectionProp>
-            <collectionProp name="526809372">
-              <stringProp name="52469">500</stringProp>
-              <stringProp name="52469">500</stringProp>
+            <collectionProp name="-1772201956">
+              <stringProp name="52469">200</stringProp>
+              <stringProp name="52469">200</stringProp>
               <stringProp name="1515111">1800</stringProp>
             </collectionProp>
           </collectionProp>
         </kg.apc.jmeter.timers.VariableThroughputTimer>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Fetch account details by Account ID" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create New User" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
-              <elementProp name="clientId" elementType="HTTPArgument">
+              <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${clientId}</stringProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;email&quot;: &quot;test_${__time(,time)}_${__RandomString(5,abcdefghijklmnopqrstuvwxyz0123456789,emailString)}@example.com&quot;,&#xd;
+  &quot;trackingId&quot;: &quot;${__UUID}&quot;&#xd;
+}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">clientId</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${Account-service}</stringProp>
+          <stringProp name="HTTPSampler.domain">${User-service}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/account</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <stringProp name="HTTPSampler.path">/user</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -105,6 +102,10 @@
         <hashTree>
           <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
               <elementProp name="accept" elementType="Header">
                 <stringProp name="Header.name">accept</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
@@ -114,7 +115,7 @@
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1011205162">accountNumber</stringProp>
+              <stringProp name="519081716">NEWLY_REGISTERED</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
