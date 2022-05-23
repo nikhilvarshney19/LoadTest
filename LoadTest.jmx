@@ -63,14 +63,14 @@
         <hashTree/>
         <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="true">
           <collectionProp name="load_profile">
-            <collectionProp name="558143738">
+            <collectionProp name="558113947">
               <stringProp name="49">1</stringProp>
-              <stringProp name="52469">500</stringProp>
+              <stringProp name="51508">400</stringProp>
               <stringProp name="1515111">1800</stringProp>
             </collectionProp>
-            <collectionProp name="526809372">
-              <stringProp name="52469">500</stringProp>
-              <stringProp name="52469">500</stringProp>
+            <collectionProp name="525856060">
+              <stringProp name="51508">400</stringProp>
+              <stringProp name="51508">400</stringProp>
               <stringProp name="1515111">1800</stringProp>
             </collectionProp>
           </collectionProp>
@@ -85,6 +85,13 @@
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">clientId</stringProp>
+              </elementProp>
+              <elementProp name="trackingId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__UUID}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">trackingId</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
