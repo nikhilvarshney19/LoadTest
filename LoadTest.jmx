@@ -214,7 +214,7 @@ import java.util.Date;
 if (prev.isSuccessful())
 {
 FileWriter fr = new FileWriter(&quot;CardServiceuserToken.csv&quot;,true);
-fr.write(vars.get(&quot;email&quot;)&quot;,&quot;vars.get(&quot;userId&quot;)&quot;,&quot;vars.get(&quot;userToken&quot;) + &quot;\n&quot;);
+fr.write(&quot;\n&quot; + vars.get(&quot;userToken&quot;));
 fr.close();
 }</stringProp>
         </BeanShellListener>
