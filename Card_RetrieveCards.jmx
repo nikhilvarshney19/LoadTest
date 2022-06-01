@@ -55,9 +55,9 @@
         <hashTree/>
         <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
-            <elementProp name="Customer-Service" elementType="Argument">
-              <stringProp name="Argument.name">Customer-Service</stringProp>
-              <stringProp name="Argument.value">b-accel-customer.b-accel.internal</stringProp>
+            <elementProp name="Card-Service" elementType="Argument">
+              <stringProp name="Argument.name">Card-Service</stringProp>
+              <stringProp name="Argument.value">b-accel-card-service.b-accel.internal</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
               <stringProp name="Argument.desc">localhost</stringProp>
             </elementProp>
@@ -72,10 +72,10 @@
         </Arguments>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-          <stringProp name="filename">/usr/bin/Performance/CMD/apache-jmeter-5.4.3/bin/Users_Feb17.csv</stringProp>
+          <stringProp name="filename">/usr/bin/Performance/CMD/apache-jmeter-5.4.3/bin/userid.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">email,userId</stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="variableNames">userId</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -85,53 +85,44 @@
         <hashTree/>
         <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="true">
           <collectionProp name="load_profile">
-            <collectionProp name="1814866574">
+            <collectionProp name="-1728465918">
               <stringProp name="49">1</stringProp>
-              <stringProp name="49586">200</stringProp>
+              <stringProp name="50547">300</stringProp>
               <stringProp name="1515111">1800</stringProp>
             </collectionProp>
-            <collectionProp name="2087234460">
-              <stringProp name="49586">200</stringProp>
-              <stringProp name="49586">200</stringProp>
+            <collectionProp name="369744412">
+              <stringProp name="50547">300</stringProp>
+              <stringProp name="50547">300</stringProp>
               <stringProp name="1515111">1800</stringProp>
             </collectionProp>
           </collectionProp>
         </kg.apc.jmeter.timers.VariableThroughputTimer>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create a New Client" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Retrieve Cards" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
+              <elementProp name="trackingId" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-  &quot;user&quot;: {&#xd;
-    &quot;dob&quot;: &quot;${__RandomDate(,1960-01-01,1990-12-31,,)}&quot;,&#xd;
-    &quot;id&quot;: &quot;${userId}&quot;,&#xd;
-    &quot;email&quot;: &quot;${email}&quot;,&#xd;
-    &quot;firstName&quot;: &quot;Load_${__Random(10000,99999,)}&quot;,&#xd;
-    &quot;lastName&quot;: &quot;Test_${__Random(10000,99999,)}&quot;,&#xd;
-    &quot;phoneNumber&quot;: &quot;9876543210&quot;,&#xd;
-    &quot;address&quot;: {&#xd;
-      &quot;buildingNumber&quot;: &quot;1234&quot;,&#xd;
-      &quot;street&quot;: &quot;asasaa&quot;,&#xd;
-      &quot;town&quot;: &quot;dsdsdds&quot;,&#xd;
-      &quot;postCode&quot;: &quot;100200&quot;,&#xd;
-      &quot;country&quot;: &quot;IND&quot;&#xd;
-    }&#xd;
-  },&#xd;
-  &quot;trackingId&quot;: &quot;${__UUID}&quot;&#xd;
-}</stringProp>
+                <stringProp name="Argument.value">${__UUID}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">trackingId</stringProp>
+              </elementProp>
+              <elementProp name="userToken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${userId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">userToken</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${Customer-Service}</stringProp>
+          <stringProp name="HTTPSampler.domain">${Card-Service}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/customer</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.path">/cards</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -145,18 +136,14 @@
             <collectionProp name="HeaderManager.headers">
               <elementProp name="accept" elementType="Header">
                 <stringProp name="Header.name">accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="519081716">NEWLY_REGISTERED</stringProp>
+              <stringProp name="110749">pan</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -164,9 +151,9 @@
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="clientId Extractor" enabled="true">
-            <stringProp name="JSONPostProcessor.referenceNames">clientId</stringProp>
-            <stringProp name="JSONPostProcessor.jsonPathExprs">$..clientId</stringProp>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="userToken Extractor" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">userToken</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$..userToken</stringProp>
             <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
             <stringProp name="JSONPostProcessor.defaultValues">**clientId_not_found**</stringProp>
           </JSONPostProcessor>
@@ -203,7 +190,7 @@
           <stringProp name="filename">test.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="BeanShell Listener" enabled="true">
+        <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="BeanShell Listener" enabled="false">
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
           <boolProp name="resetInterpreter">false</boolProp>
@@ -216,8 +203,8 @@ import java.util.Date;
 
 if (prev.isSuccessful())
 {
-FileWriter fr = new FileWriter(&quot;CustomerServiceClientId.csv&quot;,true);
-fr.write(&quot;\n&quot; + vars.get(&quot;clientId&quot;));
+FileWriter fr = new FileWriter(&quot;CardServiceuserToken.csv&quot;,true);
+fr.write(&quot;\n&quot; + vars.get(&quot;userToken&quot;));
 fr.close();
 }</stringProp>
         </BeanShellListener>
