@@ -72,9 +72,9 @@
         </Arguments>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-          <stringProp name="filename">/usr/bin/Performance/CMD/apache-jmeter-5.4.3/bin/Users_Feb17.csv</stringProp>
+          <stringProp name="filename">/usr/bin/Performance/CMD/apache-jmeter-5.4.3/bin/CardServiceuserToken.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">email,userId</stringProp>
+          <stringProp name="variableNames">usertoken</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
@@ -85,12 +85,12 @@
         <hashTree/>
         <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="true">
           <collectionProp name="load_profile">
-            <collectionProp name="-1694406931">
+            <collectionProp name="558113947">
               <stringProp name="49">1</stringProp>
               <stringProp name="51508">400</stringProp>
               <stringProp name="1515111">1800</stringProp>
             </collectionProp>
-            <collectionProp name="1459631996">
+            <collectionProp name="-1726664818">
               <stringProp name="51508">400</stringProp>
               <stringProp name="51508">400</stringProp>
               <stringProp name="1515111">1800</stringProp>
@@ -110,7 +110,7 @@
               </elementProp>
               <elementProp name="id" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${userId}</stringProp>
+                <stringProp name="Argument.value">${usertoken}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">id</stringProp>
