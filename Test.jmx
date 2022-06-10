@@ -13,15 +13,15 @@
     </TestPlan>
     <hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+        <stringProp name="ThreadGroup.num_threads">5000</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">900</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">900</stringProp>
+        <stringProp name="ThreadGroup.duration">3600</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
@@ -40,157 +40,69 @@
         <hashTree/>
         <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
-            <elementProp name="User-service" elementType="Argument">
-              <stringProp name="Argument.name">User-service</stringProp>
-              <stringProp name="Argument.value">b-accel-user.b-accel.internal</stringProp>
+            <elementProp name="access_token" elementType="Argument">
+              <stringProp name="Argument.name">access_token</stringProp>
+              <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImxOVll4X181aHB4aGRwLUluYU9HWCJ9.eyJodHRwczovL2ItYWNjZWwtcWEvZW1haWwiOiJuaWtoaWx2YXJzaG5leTE5QGdtYWlsLmNvbSIsImh0dHBzOi8vYi1hY2NlbC1xYS9lbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9iLWFjY2VsLXFhLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MjNkNWQwNDY2YzlmMTAwNmE5NWJhMDEiLCJhdWQiOlsiaHR0cHM6Ly9iLWFjY2VsLXFhIiwiaHR0cHM6Ly9iLWFjY2VsLXFhLnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NTI4NzA2NjcsImV4cCI6MTY1Mjk1NzA2NywiYXpwIjoiSTFxbnpLVUQwZEhCV2dFeDBuaXQ3RDcwSDhQZEFRZ3kiLCJzY29wZSI6Im9wZW5pZCBlbWFpbCIsImd0eSI6InBhc3N3b3JkIn0.R3hz0x56mYZtKocAAh0rIqHmRzjItoDZsVaUDvYD_RwHMjGFMPwuYxL8435K6clK-nLd2OeXZNiY4_YPQLjvSJAeo6OXtPveustJgp2cbVi9v612o-rnbH0fNpWQkWtv-6TV2eGDpeXYv0vQADseVmoSFG6sMRQIePmXo9sbG0S7-VAFjy4VQkQi3x-itq-YtzrKui7iqyYmXGVVshRtnDGi2jBknHdT3rCfzyePT4VhvoVZrPKDSz0BLJHAtBBC8Li-fN5SxjsNQdCVsgb05HXNUHgHXbjK6ZTBK-i_T8hwUw0sKWSn3TVZkYOxtArR8zAStP5tQePQvj4_zU0p5Q</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">localhost</stringProp>
             </elementProp>
-            <elementProp name="port" elementType="Argument">
-              <stringProp name="Argument.name">port</stringProp>
-              <stringProp name="Argument.value">80</stringProp>
+            <elementProp name="email" elementType="Argument">
+              <stringProp name="Argument.name">email</stringProp>
+              <stringProp name="Argument.value">nikhilvarshney19@gmail.com</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">5001</stringProp>
+              <stringProp name="Argument.desc">loadtest02feb_7@example.com</stringProp>
+            </elementProp>
+            <elementProp name="password" elementType="Argument">
+              <stringProp name="Argument.name">password</stringProp>
+              <stringProp name="Argument.value">Testing@123</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
-          <stringProp name="TestPlan.comments">/usr/bin/Jmeter/LoadTest/Logs/</stringProp>
         </Arguments>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-          <stringProp name="filename">/usr/bin/Jmeter/LoadTest/Users_Feb17.csv</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">email</stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
           <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">/Users/nikhilvarshney/Downloads/apache-jmeter-5.4.3/bin/UserCreds.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
-          <boolProp name="stopThread">false</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">email,password</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="false">
+        <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="true">
           <collectionProp name="load_profile">
-            <collectionProp name="-1147503684">
+            <collectionProp name="83377462">
               <stringProp name="49">1</stringProp>
-              <stringProp name="48625">100</stringProp>
-              <stringProp name="48687">120</stringProp>
-            </collectionProp>
-            <collectionProp name="-1875958267">
-              <stringProp name="48625">100</stringProp>
-              <stringProp name="48625">100</stringProp>
-              <stringProp name="56313">900</stringProp>
-            </collectionProp>
-            <collectionProp name="-1874504498">
-              <stringProp name="48625">100</stringProp>
               <stringProp name="49586">200</stringProp>
-              <stringProp name="48687">120</stringProp>
+              <stringProp name="53430">600</stringProp>
             </collectionProp>
-            <collectionProp name="-809964987">
+            <collectionProp name="50786108">
               <stringProp name="49586">200</stringProp>
               <stringProp name="49586">200</stringProp>
-              <stringProp name="56313">900</stringProp>
-            </collectionProp>
-            <collectionProp name="-90188704">
-              <stringProp name="49586">200</stringProp>
-              <stringProp name="50547">300</stringProp>
-              <stringProp name="48687">120</stringProp>
-            </collectionProp>
-            <collectionProp name="1767512261">
-              <stringProp name="50547">300</stringProp>
-              <stringProp name="50547">300</stringProp>
-              <stringProp name="56313">900</stringProp>
-            </collectionProp>
-            <collectionProp name="1769712727">
-              <stringProp name="50547">300</stringProp>
-              <stringProp name="51508">400</stringProp>
-              <stringProp name="48687">120</stringProp>
-            </collectionProp>
-            <collectionProp name="-1437567451">
-              <stringProp name="51508">400</stringProp>
-              <stringProp name="51508">400</stringProp>
-              <stringProp name="56313">900</stringProp>
-            </collectionProp>
-            <collectionProp name="-1436113682">
-              <stringProp name="51508">400</stringProp>
-              <stringProp name="52469">500</stringProp>
-              <stringProp name="48687">120</stringProp>
-            </collectionProp>
-            <collectionProp name="-371574171">
-              <stringProp name="52469">500</stringProp>
-              <stringProp name="52469">500</stringProp>
-              <stringProp name="56313">900</stringProp>
-            </collectionProp>
-            <collectionProp name="-369349618">
-              <stringProp name="52469">500</stringProp>
-              <stringProp name="53430">600</stringProp>
-              <stringProp name="48687">120</stringProp>
-            </collectionProp>
-            <collectionProp name="719084197">
-              <stringProp name="53430">600</stringProp>
-              <stringProp name="53430">600</stringProp>
-              <stringProp name="56313">900</stringProp>
-            </collectionProp>
-            <collectionProp name="720537966">
-              <stringProp name="53430">600</stringProp>
-              <stringProp name="54391">700</stringProp>
-              <stringProp name="48687">120</stringProp>
-            </collectionProp>
-            <collectionProp name="1785077477">
-              <stringProp name="54391">700</stringProp>
-              <stringProp name="54391">700</stringProp>
-              <stringProp name="56313">900</stringProp>
-            </collectionProp>
-            <collectionProp name="1787277943">
-              <stringProp name="54391">700</stringProp>
-              <stringProp name="55352">800</stringProp>
-              <stringProp name="48687">120</stringProp>
-            </collectionProp>
-            <collectionProp name="-1420002235">
-              <stringProp name="55352">800</stringProp>
-              <stringProp name="55352">800</stringProp>
-              <stringProp name="56313">900</stringProp>
-            </collectionProp>
-            <collectionProp name="-1417801769">
-              <stringProp name="55352">800</stringProp>
-              <stringProp name="56313">900</stringProp>
-              <stringProp name="48687">120</stringProp>
-            </collectionProp>
-            <collectionProp name="-330114651">
-              <stringProp name="56313">900</stringProp>
-              <stringProp name="56313">900</stringProp>
-              <stringProp name="56313">900</stringProp>
-            </collectionProp>
-            <collectionProp name="-1730935240">
-              <stringProp name="56313">900</stringProp>
-              <stringProp name="1507423">1000</stringProp>
-              <stringProp name="48687">120</stringProp>
-            </collectionProp>
-            <collectionProp name="-254668836">
-              <stringProp name="1507423">1000</stringProp>
-              <stringProp name="1000">1000</stringProp>
-              <stringProp name="56313">900</stringProp>
+              <stringProp name="1567005">3000</stringProp>
             </collectionProp>
           </collectionProp>
         </kg.apc.jmeter.timers.VariableThroughputTimer>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get User" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Update User" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
-              <elementProp name="email" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                <stringProp name="Argument.value">${email}</stringProp>
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;query&quot;:&quot;{  me {   firstName,    email  }}&quot;,&quot;variables&quot;:null}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">email</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${User-service}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.domain">b-accel.dev.leapx.mckinsey.digital</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/user</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <stringProp name="HTTPSampler.path">/api/graphql</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -202,16 +114,20 @@
         <hashTree>
           <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
-              <elementProp name="accept" elementType="Header">
-                <stringProp name="Header.name">accept</stringProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IllSOXFVRk9nUWE5bW5XQnJRZHhZVCJ9.eyJpc3MiOiJodHRwczovL2Rldi1pNS1reTRsYy51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI4NDcyNGU1YmYwZmIwMDY5YWM2YjllIiwiYXVkIjpbImh0dHBzOi8vZGV2LWk1LWt5NGxjLnVzLmF1dGgwLmNvbS9hcGkvdjIvIiwiaHR0cHM6Ly9kZXYtaTUta3k0bGMudXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY1NDg0Nzk0OCwiZXhwIjoxNjU0OTMyNTQ4LCJhenAiOiJyR1JpdVI0YmtZS0o3NlRFeWRORUd1N3VBYWFRUFBibyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ.ltYyo1olhxS_MSL_wVRJD-9LszLeFlSULMCeoKO9bqf1_ZOZUrlR8lSK5gXSGz3IJUiOCzyE0mPL9dv6INZorHoWM_lXjOUHpCk7vrQrGIcttzPPohFhkzytoge30h90M_Wjs8MnAGLgGKJXvv9NYI-8JK1dmnW6DTOFb0ijiVkYy8IVVulfh97axAPsWl1HDaUAlkH_UC2oM050BkR74l7RsN3nI3u7j77DkR3hOh771L0RMf1n3ZNem6vxJm42Ho9y9vVo63XAmbaY67wPcWPNf9jBpCRTBUMeSUDDmneBfpk-T46Z9KgiWrhz6bi8R71u_5qmYCjbkV90_rr3JA</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="519081716">NEWLY_REGISTERED</stringProp>
+              <stringProp name="-1382532543">User Updated Successfully</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -220,6 +136,43 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
         <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
@@ -254,7 +207,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">/usr/bin/Jmeter/LoadTest/Logs/Test_${__time(MMMdd,)}.csv</stringProp>
+          <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
