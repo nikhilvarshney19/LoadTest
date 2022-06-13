@@ -116,7 +116,7 @@
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IllSOXFVRk9nUWE5bW5XQnJRZHhZVCJ9.eyJpc3MiOiJodHRwczovL2Rldi1pNS1reTRsYy51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI4NDcyNGU1YmYwZmIwMDY5YWM2YjllIiwiYXVkIjpbImh0dHBzOi8vZGV2LWk1LWt5NGxjLnVzLmF1dGgwLmNvbS9hcGkvdjIvIiwiaHR0cHM6Ly9kZXYtaTUta3k0bGMudXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY1NTA5NzAzNiwiZXhwIjoxNjU1MTgxNjM2LCJhenAiOiJyR1JpdVI0YmtZS0o3NlRFeWRORUd1N3VBYWFRUFBibyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ.P_v-lCmdbQLMUVpFIQ1BwUVbExSOa1YGFiCbIfo1NB4A-XVUm7bT3nrZv4HzUbLQbSSWHLiWMFcmLyNxE0wYBE1g5GI-5RreL8R63WExeVDEoStZFwtHMZRGptciefTdnpHYeQZJU_Z0EWENROGxwwvjFyl2gyJKOV7mHH788L3mZnwgy0494OET_Y4HB_IV8YLiFvFI9p4AngRJu4adI_LRcyGSR5Sn3oXJ76j6zTfT6Rj3jzHXf8fVxj8fl-Un7InhydYlXbczJ1GqhaNEmajMZTT6Pk8dWCqQlyJMoPfdhWVXVBm6sOEfUO9MKhIX9ZTW8m5h0fSXSo4CkCF19Q</stringProp>
+                <stringProp name="Header.value">XYZ</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
