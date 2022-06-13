@@ -19,9 +19,9 @@
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">5000</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">300</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">600</stringProp>
+        <stringProp name="ThreadGroup.duration">11</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
@@ -73,15 +73,15 @@
         <hashTree/>
         <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="true">
           <collectionProp name="load_profile">
-            <collectionProp name="1340186788">
+            <collectionProp name="83294290">
               <stringProp name="49">1</stringProp>
-              <stringProp name="49586">200</stringProp>
-              <stringProp name="50547">300</stringProp>
+              <stringProp name="48625">100</stringProp>
+              <stringProp name="49">1</stringProp>
             </collectionProp>
-            <collectionProp name="1612554674">
-              <stringProp name="49586">200</stringProp>
-              <stringProp name="49586">200</stringProp>
-              <stringProp name="50547">300</stringProp>
+            <collectionProp name="48267358">
+              <stringProp name="48625">100</stringProp>
+              <stringProp name="48625">100</stringProp>
+              <stringProp name="1567">10</stringProp>
             </collectionProp>
           </collectionProp>
         </kg.apc.jmeter.timers.VariableThroughputTimer>
@@ -116,7 +116,7 @@
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IllSOXFVRk9nUWE5bW5XQnJRZHhZVCJ9.eyJpc3MiOiJodHRwczovL2Rldi1pNS1reTRsYy51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI4NDcyNGU1YmYwZmIwMDY5YWM2YjllIiwiYXVkIjpbImh0dHBzOi8vZGV2LWk1LWt5NGxjLnVzLmF1dGgwLmNvbS9hcGkvdjIvIiwiaHR0cHM6Ly9kZXYtaTUta3k0bGMudXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY1NDg0Nzk0OCwiZXhwIjoxNjU0OTMyNTQ4LCJhenAiOiJyR1JpdVI0YmtZS0o3NlRFeWRORUd1N3VBYWFRUFBibyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ.ltYyo1olhxS_MSL_wVRJD-9LszLeFlSULMCeoKO9bqf1_ZOZUrlR8lSK5gXSGz3IJUiOCzyE0mPL9dv6INZorHoWM_lXjOUHpCk7vrQrGIcttzPPohFhkzytoge30h90M_Wjs8MnAGLgGKJXvv9NYI-8JK1dmnW6DTOFb0ijiVkYy8IVVulfh97axAPsWl1HDaUAlkH_UC2oM050BkR74l7RsN3nI3u7j77DkR3hOh771L0RMf1n3ZNem6vxJm42Ho9y9vVo63XAmbaY67wPcWPNf9jBpCRTBUMeSUDDmneBfpk-T46Z9KgiWrhz6bi8R71u_5qmYCjbkV90_rr3JA</stringProp>
+                <stringProp name="Header.value">Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IllSOXFVRk9nUWE5bW5XQnJRZHhZVCJ9.eyJpc3MiOiJodHRwczovL2Rldi1pNS1reTRsYy51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI4NDcyNGU1YmYwZmIwMDY5YWM2YjllIiwiYXVkIjpbImh0dHBzOi8vZGV2LWk1LWt5NGxjLnVzLmF1dGgwLmNvbS9hcGkvdjIvIiwiaHR0cHM6Ly9kZXYtaTUta3k0bGMudXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY1NTA5NzAzNiwiZXhwIjoxNjU1MTgxNjM2LCJhenAiOiJyR1JpdVI0YmtZS0o3NlRFeWRORUd1N3VBYWFRUFBibyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ.P_v-lCmdbQLMUVpFIQ1BwUVbExSOa1YGFiCbIfo1NB4A-XVUm7bT3nrZv4HzUbLQbSSWHLiWMFcmLyNxE0wYBE1g5GI-5RreL8R63WExeVDEoStZFwtHMZRGptciefTdnpHYeQZJU_Z0EWENROGxwwvjFyl2gyJKOV7mHH788L3mZnwgy0494OET_Y4HB_IV8YLiFvFI9p4AngRJu4adI_LRcyGSR5Sn3oXJ76j6zTfT6Rj3jzHXf8fVxj8fl-Un7InhydYlXbczJ1GqhaNEmajMZTT6Pk8dWCqQlyJMoPfdhWVXVBm6sOEfUO9MKhIX9ZTW8m5h0fSXSo4CkCF19Q</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
