@@ -98,7 +98,7 @@
           </collectionProp>
         </kg.apc.jmeter.timers.VariableThroughputTimer>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Update State of a card" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create Pin for a card" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -106,10 +106,8 @@
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
   &quot;trackingId&quot;: &quot;${__UUID}&quot;,&#xd;
-  &quot;reason&quot;: &quot;LoadTesting&quot;,&#xd;
   &quot;cardToken&quot;: &quot;5844febd-b034-4ef9-b012-5a0b39cf8b73&quot;,&#xd;
-  &quot;state&quot;: &quot;ACTIVE&quot;,&#xd;
-  &quot;channel&quot;: &quot;ADMIN&quot;&#xd;
+  &quot;pin&quot;: &quot;${__Random(1000,9999,)}&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -119,7 +117,7 @@
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/cards/state</stringProp>
+          <stringProp name="HTTPSampler.path">/cards/pin</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
