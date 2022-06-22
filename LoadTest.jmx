@@ -85,14 +85,14 @@
         <hashTree/>
         <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="true">
           <collectionProp name="load_profile">
-            <collectionProp name="-1694406931">
+            <collectionProp name="-1728465918">
               <stringProp name="49">1</stringProp>
-              <stringProp name="51508">400</stringProp>
+              <stringProp name="50547">300</stringProp>
               <stringProp name="1515111">1800</stringProp>
             </collectionProp>
-            <collectionProp name="1459631996">
-              <stringProp name="51508">400</stringProp>
-              <stringProp name="51508">400</stringProp>
+            <collectionProp name="369744412">
+              <stringProp name="50547">300</stringProp>
+              <stringProp name="50547">300</stringProp>
               <stringProp name="1515111">1800</stringProp>
             </collectionProp>
           </collectionProp>
