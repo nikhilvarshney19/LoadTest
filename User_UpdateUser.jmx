@@ -59,7 +59,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
           <stringProp name="filename">/usr/bin/Performance/CMD/apache-jmeter-5.4.3/bin/Users_Feb17.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">email,UserId</stringProp>
+          <stringProp name="variableNames">email,UUID</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
@@ -83,16 +83,29 @@
           </collectionProp>
         </kg.apc.jmeter.timers.VariableThroughputTimer>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Update Phone Number" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Update User" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;userId&quot;: &quot;${UserId}&quot;,&#xd;
+  &quot;dob&quot;: &quot;${__RandomDate(yyyy-MM-dd,1940-01-01,1990-12-31,,)}&quot;,&#xd;
+  &quot;email&quot;: &quot;${email}&quot;,&#xd;
+  &quot;firstName&quot;: &quot;${__RandomString(6,abcdefghijklmnopqrstuvwxyz,)}&quot;,&#xd;
+  &quot;lastName&quot;: &quot;${__RandomString(6,abcdefghijklmnopqrstuvwxyz,)}&quot;,&#xd;
   &quot;phoneNumber&quot;: &quot;${__Random(9000000000,9999999999,)}&quot;,&#xd;
-  &quot;trackingId&quot;: &quot;${__UUID}&quot;&#xd;
+  &quot;address&quot;: {&#xd;
+    &quot;buildingNumber&quot;: &quot;${__Random(1000,9999,)}&quot;,&#xd;
+    &quot;street&quot;: &quot;xyz&quot;,&#xd;
+    &quot;town&quot;: &quot;abc&quot;,&#xd;
+    &quot;postCode&quot;: &quot;${__Random(100000,999999,)}&quot;,&#xd;
+    &quot;country&quot;: &quot;IND&quot;&#xd;
+  },&#xd;
+  &quot;status&quot;: &quot;NEWLY_REGISTERED&quot;,&#xd;
+  &quot;riskProfile&quot;: null,&#xd;
+  &quot;trackingId&quot;: &quot;${__UUID}&quot;,&#xd;
+  &quot;phoneNumberVerified&quot;: false&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -117,7 +130,7 @@
             <collectionProp name="HeaderManager.headers">
               <elementProp name="accept" elementType="Header">
                 <stringProp name="Header.name">accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
